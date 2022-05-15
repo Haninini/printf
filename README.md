@@ -71,6 +71,6 @@ The following are the tasks of this project.
 * All the above options work well together.
    
  ## Author 
-    [Bekri Zeynu](http://github.com/Bek101)
-    [Hana Mekonnen](http://github.com/Haninini)
+    [Bekri Zeynu](http://www.github.com/Bek101)
+    [Hana Mekonnen](http://www.github.com/Haninini)
     
