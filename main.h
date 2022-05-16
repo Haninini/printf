@@ -17,25 +17,11 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #define ABS(a) ((a) > (0) ? (a) : (0 - (a)))
-#define NO_LESS(a, b) ((a) < (b) ? (b) : ((a)))
 #define NO_NEG(a) ((a) < (0) ? (0) : ((a)))
-#define TO_UPPER(c) ((c) >= 'a' && (c) <= 'z' ? (c) -6 - 26 : (c))
+#define NO_LESS(a, b) ((a) < (b) ? (b) : ((a)))
+#define TO_UPPER(c) ((c) >= 'a' && (c) <= 'z' ? (c) - 6 - 26 : (c))
 #define TO_LOWER(c) ((c) >= 'A' && (c) <= 'Z' ? (c) + 6 + 26 : (c))
 #define FMT_PREC_EMPTY(fmt_inf) (fmt_inf->is_precision_set && !fmt_inf->prec)
-
-/**
- * struct float_info - Represent the IEE754 specification of a float
- * @sign: The sign of the float
- * @exponent: The exponent of the float
- * @mantissa: The mantissa of the float
- */
-struct float_info
-{
-	char sign;
-	char *exponent;
-	char *mantissa;
-};
-typedef struct float_info float_info_t;
 
 /**
  * struct format_info - Contains information about the options
@@ -92,14 +78,26 @@ typedef struct spec_printer spec_printer_t;
 typedef unsigned char uchar_t;
 typedef unsigned short ushort_t;
 
+/**
+ * struct float_info - Represents the IEE754 specification of a float
+ * @sign: The sign of the float
+ * @exponent: The exponent of the float
+ * @mantissa: The mantissa of the float
+ */
+struct float_info
+{
+	char sign;
+	char *exponent;
+	char *mantissa;
+};
+typedef struct float_info float_info_t;
 
 
 int _putchar(char c);
 int _putstr(char *str);
 int write_to_buffer(char c, char action);
 int _printf(const char *format, ...);
-void write_format(va_list *arg_list, fmt_info_t *fmt_info);
-
+void write_format(va_list *args_list, fmt_info_t *fmt_info);
 
 
 void print_repeat(char c, int n);
@@ -118,7 +116,8 @@ void free_float_info(float_info_t *flt_info);
 int set_number(const char *str, int *number);
 void set_length(char cur, int *pos, fmt_info_t *fmt_info);
 int set_flags(const char *str, fmt_info_t *fmt_info);
-void set_precision(const char *str. va_list args, fmt_info_t *fmt_info, int *i, int *error_status);
+void set_precision(const char *str, va_list args,
+	fmt_info_t *fmt_info, int *i, int *error_status);
 int read_format_info(const char *, va_list, fmt_info_t *, int *);
 
 
