@@ -127,12 +127,10 @@ void convert_fmt_p(va_list *args_list, fmt_info_t *fmt_info);
 void convert_fmt_c(va_list *args_list, fmt_info_t *fmt_info);
 void convert_fmt_s(va_list *args_list, fmt_info_t *fmt_info);
 
-
 void convert_fmt_di(va_list *args_list, fmt_info_t *fmt_info);
 void convert_fmt_xX(va_list *args_list, fmt_info_t *fmt_info);
 void convert_fmt_o(va_list *args_list, fmt_info_t *fmt_info);
 void convert_fmt_u(va_list *args_list, fmt_info_t *fmt_info);
-
 
 void convert_fmt_b(va_list *args_list, fmt_info_t *fmt_info);
 void convert_fmt_R(va_list *args_list, fmt_info_t *fmt_info);
@@ -154,7 +152,6 @@ char *insert_char(char *str, int pos, char c, char can_free);
 int count_char(char *str, char c);
 char *str_cat(char *left, char *right, char can_free);
 
-
 char *sub_str(char *str, int i, char can_free);
 char *trim_start(char *str, char c, char can_free);
 char *trim_end(char *str, char c, char can_free);
@@ -171,8 +168,7 @@ char *multiply(char *num, char *multiple);
 char *add_int(char *left, char *right, int can_free);
 char *add_float(char *left, char *right, char can_free);
 char *mul_int(char *num1, char *num2, char can_free);
-char *num_float(char *left, char *right, char can_free);
-
+char *mul_float(char *left, char *right, char can_free);
 
 char *div_by_10_exp(char *num, unsigned short n, char can_free);
 char *two_exp(short n);
@@ -183,13 +179,14 @@ char *u_long_to_hex(unsigned long num, char upper);
 char *round_float(char *num, unsigned int precision, char can_free);
 char *round_float_to_int(char *num, int len, int dec_pos, int frac_len);
 
+
 char *u_long_to_str(unsigned long num);
 char *long_to_str(long num);
 char *ptr_to_str(void *ptr);
 char *is_invalid(float_info_t *flt_info);
 
-
-void set_float_parts(double num, uchar_t exponent_size, uchar_t mantissa_size, float_info_t *float_info);
+void set_float_parts(double num,	uchar_t exponent_size,
+	uchar_t mantissa_size, float_info_t *float_info);
 char *mantissa_to_dec_fraction(char *mantissa, unsigned short frac_len);
 char *float_to_str(float_info_t *flt_info, char can_free);
 
