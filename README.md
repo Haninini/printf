@@ -71,5 +71,5 @@ The following are the tasks of this project.
 * All the above options work well together.
    
  ## Author 
-    Bekri Zeynu and Hana Mekonnen
+    Abubeker Zeynu and Hana Mekonnen
     
